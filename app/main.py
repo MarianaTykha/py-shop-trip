@@ -23,8 +23,8 @@ def shop_trip() -> None:
             )
             total_costs = (
                 trip_cost
-                + sum(value * shop.products[key]
-                      for key, value in customer.product_cart.items())
+                + sum(quantity * shop.products[product]
+                      for product, quantity in customer.product_cart.items())
             )
             print(
                 f"{customer.name}'s trip to the {shop.name} "
@@ -38,6 +38,7 @@ def shop_trip() -> None:
                 f"{customer.name} doesn't have enough "
                 f"money to make a purchase in any shop"
             )
+        customer.location = "home"
         print(f"{customer.name} rides to {the_nearest_shop.name}\n")
 
         shopping(
