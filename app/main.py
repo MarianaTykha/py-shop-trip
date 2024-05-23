@@ -38,9 +38,8 @@ def shop_trip() -> None:
                 f"{customer.name} doesn't have enough "
                 f"money to make a purchase in any shop"
             )
-        customer.location = "home"
+        customer.location = the_nearest_shop.location
         print(f"{customer.name} rides to {the_nearest_shop.name}\n")
-
         shopping(
             customer.name,
             customer.product_cart,
