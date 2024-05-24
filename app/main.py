@@ -45,7 +45,7 @@ def shop_trip() -> None:
             customer.product_cart,
             the_nearest_shop.products
         )
-        the_nearest_shop.location = customer.location
+        customer.location = the_nearest_shop.location
         print(
             f"{customer.name} rides home\n"
             f"{customer.name} now has {customer.money - min(shops)} dollars\n"
